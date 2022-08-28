@@ -1,8 +1,8 @@
 //
 //  ZanzibarApp.swift
-//  Zanzibar
+//  Shared
 //
-//  Created by Uyen Nguyen Minh Duy on 28/08/2022.
+//  Created by Uyen Nguyen Minh Duy on 23/08/2022.
 //
 
 import SwiftUI
@@ -11,7 +11,7 @@ import SwiftUI
 struct ZanzibarApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MenuView()
         }
     }
 }
