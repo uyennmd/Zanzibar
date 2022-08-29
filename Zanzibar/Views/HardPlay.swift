@@ -1,9 +1,14 @@
-//
-//  HardPlay.swift
-//  Zanzibar (iOS)
-//
-//  Created by Uyen Nguyen Minh Duy on 25/08/2022.
-//
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2022B
+  Assessment: Assignment 2
+  Author: Nguyen Minh Duy Uyen
+  ID: s3819342
+  Created  date: 23/08/2022
+  Last modified: 29/08/2022
+  Acknowledgement: Acknowledge the resources that you use here. 
+*/
 
 import SwiftUI
 
@@ -26,6 +31,7 @@ struct HardPlay: View {
                 .opacity(0.4)
                 .ignoresSafeArea(.all)
             VStack {
+                //Show the row of player
                 ForEach($players) { player in
                     PlayerRow(player: player)
                 }
@@ -33,6 +39,7 @@ struct HardPlay: View {
                     Spacer()
                     HStack{
                         Spacer()
+                        //show 3 dices
                         ForEach(0...roll.count-1, id: \.self) {dice in
                             Image("\(roll[dice])")
                                 .resizable()
@@ -40,7 +47,7 @@ struct HardPlay: View {
                             Spacer()
                         }
                     }
-                    Button {
+                    Button {//button to roll dice
                         rollCount += 1
                         if (rollCount == 1) {
                             disableConfirm = false
@@ -76,8 +83,7 @@ struct HardPlay: View {
 
 
                     Spacer()
-    //                Text(resetLeaderboard(lead:leader,player:players[0])[0].name)
-                    Button {
+                    Button {//button to go to end your turn
                         players[play].highscore += players[play].score
                         if (play < players.count) {
                             disableRoll = false
@@ -102,7 +108,8 @@ struct HardPlay: View {
                 
             }
             if (disableConfirm && disableRoll) {
-                Button {
+                Button {              
+                    //button to end the round(calculate chip and sort list of player in score and start new round. if after calculate chip, someone has reached 0, turn into end game
                     players = endHardRound(players: players)
                     play = 0
                     for player in players {
@@ -122,7 +129,8 @@ struct HardPlay: View {
                         )
                 }
             }
-            if (endGame) {
+            if (endGame) {//show when endgame is toggle
+              //End Game screen
                 ZStack {
                     myColor.blue
                         .ignoresSafeArea(.all)
@@ -131,7 +139,7 @@ struct HardPlay: View {
                         WinView(winner: players[0])
                             .padding(10)
                         Spacer()
-                        Button {
+                        Button {//button to compare and store the winner into leaderboard and turn back to main menu
                             leader.name = players[0].name
                             leader.score = players[0].highscore
                             self.presentationMode.wrappedValue.dismiss()
