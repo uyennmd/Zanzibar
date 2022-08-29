@@ -50,6 +50,7 @@ struct EasyPlay: View {
                     }
                   //button to roll dice
                     Button {
+                        playSound(sound: "spin", type: "mp3")   //play sound while rolling
                         rollCount += 1
                         if (rollCount == 1) {
                             disableConfirm = false
@@ -142,6 +143,8 @@ struct EasyPlay: View {
                         Spacer()
                         WinView(winner: players[0])
                             .padding(10)
+                            .onAppear(perform:{playSound(sound: "winning", type: "mp3")})
+
                         Spacer()
                       //button to compare and store the winner into leaderboard and turn back to main menu
                         Button {
