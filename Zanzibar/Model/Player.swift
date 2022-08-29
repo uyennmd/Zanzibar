@@ -1,12 +1,18 @@
-//
-//  File.swift
-//  Zanzibar (iOS)
-//
-//  Created by Uyen Nguyen Minh Duy on 23/08/2022.
-//
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2022B
+  Assessment: Assignment 2
+  Author: Nguyen Minh Duy Uyen
+  ID: s3819342
+  Created  date: 23/08/2022
+  Last modified: 29/08/2022
+  Acknowledgement: Acknowledge the resources that you use here. 
+*/
 
 import Foundation
 
+//Using for How to Play View
 let zanzibar = """
 The first player may roll the dice up to three times in an attempt to get as high a score as possible.
 (See How do you score? below.) They may stop rolling after the first or second roll if they wish.
@@ -56,7 +62,7 @@ let hard = """
 This variant is the same as regular Zanzibar except the losing player receives a number of chips from each other player based on each player's score instead of just the winner's score. In the Round Example above, Player 4 would receive three chips from Player 1 (for having a three-of-a-kind), two chips from Player 2, four chips from Player 3, and one chip from Player 5.
 """
 
-
+//Class implement the player
 class Player:Identifiable {
     var name = "Player"
     var score = 0
@@ -72,18 +78,14 @@ class Player:Identifiable {
     }
     
 }
-
+//class for setting
 class Setting: ObservableObject {
     @Published var player = 2
     @Published var chip = 20
     @Published var level = "normal"
 }
-//extension Array {
-//    public init(count: Int, elementCreator: @autoclosure () -> Element) {
-//        self = (0 ..< count).map { _ in elementCreator() }
-//    }
-//}
 
+//function to create array of player based in setting
 func createPlayers(numPlayer: Int, numChip: Int) -> [Player] {
     
     var players = [Player]()
@@ -96,6 +98,8 @@ func createPlayers(numPlayer: Int, numChip: Int) -> [Player] {
     return players
 }
 
+
+//class for leaderboard
 class Leader: ObservableObject {
     @Published var name = "Player"
     @Published var score = 0
