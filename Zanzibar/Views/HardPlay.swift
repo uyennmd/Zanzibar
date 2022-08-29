@@ -48,6 +48,7 @@ struct HardPlay: View {
                         }
                     }
                     Button {//button to roll dice
+                        playSound(sound: "spin", type: "mp3")   //play sound while rolling
                         rollCount += 1
                         if (rollCount == 1) {
                             disableConfirm = false
@@ -137,7 +138,8 @@ struct HardPlay: View {
                     VStack {
                         Spacer()
                         WinView(winner: players[0])
-                            .padding(10)
+                            .padding(10)                            
+                            .onAppear(perform:{playSound(sound: "winning", type: "mp3")})
                         Spacer()
                         Button {//button to compare and store the winner into leaderboard and turn back to main menu
                             leader.name = players[0].name
