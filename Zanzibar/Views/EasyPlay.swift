@@ -1,9 +1,14 @@
-//
-//  EasyPlay.swift
-//  Zanzibar (iOS)
-//
-//  Created by Uyen Nguyen Minh Duy on 25/08/2022.
-//
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2022B
+  Assessment: Assignment 2
+  Author: Nguyen Minh Duy Uyen
+  ID: s3819342
+  Created  date: 23/08/2022
+  Last modified: 29/08/2022
+  Acknowledgement: Acknowledge the resources that you use here. 
+*/
 
 import SwiftUI
 
@@ -76,7 +81,6 @@ struct EasyPlay: View {
 
 
                     Spacer()
-    //                Text(resetLeaderboard(lead:leader,player:players[0])[0].name)
                     Button {
                         players[play].highscore += players[play].score
                         if (play < players.count) {
@@ -103,7 +107,7 @@ struct EasyPlay: View {
             }
             if (disableConfirm && disableRoll) {
                 Button {
-                    players = endRound(players: players)
+                    players = endEasyRound(players: players)
                     play = 0
                     for player in players {
                         player.roll = 0
