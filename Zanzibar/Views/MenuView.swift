@@ -1,9 +1,14 @@
-//
-//  MenuView.swift
-//  Zanzibar (iOS)
-//
-//  Created by Uyen Nguyen Minh Duy on 25/08/2022.
-//
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2022B
+  Assessment: Assignment 2
+  Author: Nguyen Minh Duy Uyen
+  ID: s3819342
+  Created  date: 23/08/2022
+  Last modified: 29/08/2022
+  Acknowledgement: Acknowledge the resources that you use here. 
+*/
 
 import SwiftUI
 
@@ -20,13 +25,13 @@ struct MenuView: View {
                     .opacity(0.4)
                     .ignoresSafeArea(.all)
                 VStack{
-                    Image("zanzibar")
+                    Image("zanzibar") //the logo image
                         .resizable()
                         .scaledToFit()
                         .frame(width: 350)
                         .onAppear(perform:{playSound(sound: "blink", type: "mp3")})
                     Spacer()
-                    NavigationLink {
+                    NavigationLink {//button to play view
                         LevelView(setting: setting)
                     } label: {
                         ButtonView()
@@ -35,19 +40,20 @@ struct MenuView: View {
                                 .fontWeight(.bold)
                                 .foregroundColor(.blue.opacity(0.7)))
                     }
-                    NavigationLink {
+                    NavigationLink { //button to setting for changing setting
                         SettingView(setting: setting)
                     } label: {
-                        ButtonView()                            .overlay(Text("Setting")
+                        ButtonView()                            
+                            .overlay(Text("Setting")
                                 .font(.system(.title3, design: .rounded))
                                 .fontWeight(.bold)
                                 .foregroundColor(.blue.opacity(0.7)))
                     }
-                    Button {
+                    Button { // button to reset leaderboard and open the leaderboard sheet
                         leaderboard = resetLeaderboard(lead: leaderboard, player: leader)
                         UserDefaults.standard.set(leaderboard, forKey: "Leader")
                         showingMyHighScore.toggle()
-                        playSound(sound: "highscore", type: "mp3")
+                        playSound(sound: "highscore", type: "mp3")//play sound when open
                     } label: {
                         ButtonView()
                             .overlay(Text("Leaderboard")
@@ -58,7 +64,7 @@ struct MenuView: View {
                     }.sheet(isPresented: $showingMyHighScore) {
                         Leaderboard(leaderboard: leaderboard)
                     }
-                    NavigationLink {
+                    NavigationLink {//button to tutorial plage
                         HowToPlay()
                     } label: {
                         ButtonView()
