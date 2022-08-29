@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F43CF62D28BC82EC00B187A3 /* WinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43CF62C28BC82EC00B187A3 /* WinView.swift */; };
 		F4AD594228BB7951000E4DB1 /* ZanzibarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AD594128BB7951000E4DB1 /* ZanzibarApp.swift */; };
 		F4AD594428BB7951000E4DB1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AD594328BB7951000E4DB1 /* ContentView.swift */; };
 		F4AD594628BB7952000E4DB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4AD594528BB7952000E4DB1 /* Assets.xcassets */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F43CF62C28BC82EC00B187A3 /* WinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinView.swift; sourceTree = "<group>"; };
 		F4AD593E28BB7951000E4DB1 /* Zanzibar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zanzibar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4AD594128BB7951000E4DB1 /* ZanzibarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZanzibarApp.swift; sourceTree = "<group>"; };
 		F4AD594328BB7951000E4DB1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				F4AD595E28BB79D2000E4DB1 /* NormalPlay.swift */,
 				F4AD596028BB79D9000E4DB1 /* HardPlay.swift */,
 				F4AD596228BB79E9000E4DB1 /* PlayerRow.swift */,
+				F43CF62C28BC82EC00B187A3 /* WinView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4AD595128BB798A000E4DB1 /* SettingView.swift in Sources */,
+				F43CF62D28BC82EC00B187A3 /* WinView.swift in Sources */,
 				F4AD595728BB79A7000E4DB1 /* Leaderboard.swift in Sources */,
 				F4AD595328BB7995000E4DB1 /* MenuView.swift in Sources */,
 				F4AD596628BB7A5B000E4DB1 /* GamePlay.swift in Sources */,

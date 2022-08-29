@@ -8,15 +8,14 @@
 import SwiftUI
 
 struct HardPlay: View {
-    @Binding var setting: Setting
-    @Binding var players: [Player]
+    @State var players: [Player]
     var body: some View {
-        Image("1")
+        Text("a")
     }
 }
 
-struct HardPlay_Previews: PreviewProvider {
-    static var previews: some View {
-        HardPlay(setting: .constant(Setting(player: 2, chip: 20, level: "easy")), players: .constant(createPlayers(numPlayer: 2, numChip: 20)))
-    }
-}
+//struct HardPlay_Previews: PreviewProvider {
+//    static var previews: some View {
+//        HardPlay( players: createPlayers(numPlayer: 2, numChip: 20))
+//    }
+//}

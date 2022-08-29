@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct EasyPlay: View {
-    @Binding var setting: Setting
-    @Binding var players: [Player]
+    @State var players: [Player]
     var body: some View {
         ZStack{
             myColor.pink
@@ -19,8 +18,8 @@ struct EasyPlay: View {
     }
 }
 
-struct EasyPlay_Previews: PreviewProvider {
-    static var previews: some View {
-        EasyPlay(setting: .constant(Setting(player: 2, chip: 20, level: "easy")), players: .constant(createPlayers(numPlayer: 2, numChip: 20)))
-    }
-}
+//struct EasyPlay_Previews: PreviewProvider {
+//    static var previews: some View {
+//        EasyPlay(players: createPlayers(numPlayer: 2, numChip: 20))
+//    }
+//}

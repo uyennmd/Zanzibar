@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct MenuView: View {
-    @State var setting = Setting(player: 2, chip: 20, level: "normal")
+    @StateObject var setting = Setting()
+    @StateObject var leader = Leader()
     @State private var showingMyHighScore = false
     @State var active = false
     var body: some View {
@@ -20,7 +21,7 @@ struct MenuView: View {
                 VStack{
                     Spacer()
                     NavigationLink {
-                        LevelView(setting: $setting)
+                        LevelView(setting: setting)
                     } label: {
                         ButtonView()
                             .overlay(Text("Play")
@@ -29,7 +30,7 @@ struct MenuView: View {
                                 .foregroundColor(.blue.opacity(0.7)))
                     }
                     NavigationLink {
-                        SettingView(setting: $setting)
+                        SettingView(setting: setting)
                     } label: {
                         ButtonView()
                             .overlay(Text("Setting")
@@ -55,7 +56,7 @@ struct MenuView: View {
                 }
                 
             }
-        }
+        }.environmentObject(leader)
     }
 }
 //

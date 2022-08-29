@@ -74,7 +74,17 @@ func endRound (players: [Player]) -> [Player] {
 func calcChip(players: [Player]){
     var minusChip = 0
     let length = players.count - 1
-    if (players[0].score == 1000) {
+    let score = players[0].score
+    var i = 0
+    for player in players {
+        if (player.score != score) {
+            break
+        }
+        i += 1
+    }
+    if (i == length + 1) {
+        
+    } else if (players[0].score == 1000) {
         minusChip = 4
     } else if (players[0].score == 900 && players[0].score == 800 && players[0].score == 700 && players[0].score == 600 && players[0].score == 500 && players[0].score == 400) {
         
@@ -89,8 +99,11 @@ func calcChip(players: [Player]){
         if (i == length) {
             players[i].chip += (minusChip * 3)
         }
+        
     }
 }
+
+
 
 
 func resetLeaderboard(lead: [Player], player: Player) -> [Player] {

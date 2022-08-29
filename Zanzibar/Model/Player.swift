@@ -7,13 +7,14 @@
 
 import Foundation
 
-
+let defaults = UserDefaults.standard
 
 class Player:Identifiable {
     var name = "Player"
     var score = 0
     var roll = 0
     var chip = 0
+    var highscore = 0
 
     func Player(name: String, chip: Int) {
         self.name = name
@@ -24,22 +25,16 @@ class Player:Identifiable {
     
 }
 
-class Setting {
-    var player:Int
-    var chip:Int
-    var level:String
-    
-    init(player:Int,chip:Int,level:String){
-        self.player = player
-        self.chip = chip
-        self.level = level
-    }
+class Setting: ObservableObject {
+    @Published var player = 2
+    @Published var chip = 20
+    @Published var level = "normal"
 }
-extension Array {
-    public init(count: Int, elementCreator: @autoclosure () -> Element) {
-        self = (0 ..< count).map { _ in elementCreator() }
-    }
-}
+//extension Array {
+//    public init(count: Int, elementCreator: @autoclosure () -> Element) {
+//        self = (0 ..< count).map { _ in elementCreator() }
+//    }
+//}
 
 func createPlayers(numPlayer: Int, numChip: Int) -> [Player] {
     
@@ -51,4 +46,8 @@ func createPlayers(numPlayer: Int, numChip: Int) -> [Player] {
         players[i].chip = numChip
     }
     return players
+}
+
+class Leader: ObservableObject {
+    @Published var leader = [Player]()
 }

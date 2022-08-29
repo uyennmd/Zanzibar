@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SettingView: View {
-    @Binding var setting: Setting
+    @ObservedObject var setting: Setting
     @State private var isNormal = false
     @State private var isHard = false
     @State private var isEasy = false
