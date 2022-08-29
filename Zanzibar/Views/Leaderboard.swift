@@ -1,9 +1,14 @@
-//
-//  Leaderboard.swift
-//  Zanzibar
-//
-//  Created by Uyen Nguyen Minh Duy on 28/08/2022.
-//
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2022B
+  Assessment: Assignment 2
+  Author: Nguyen Minh Duy Uyen
+  ID: s3819342
+  Created  date: 23/08/2022
+  Last modified: 29/08/2022
+  Acknowledgement: Acknowledge the resources that you use here. 
+*/
 
 import SwiftUI
 
@@ -18,6 +23,7 @@ struct Leaderboard: View {
                     .foregroundColor(Color.red)
                     .font(.system(size: 50))
                     .fontWeight(.bold)
+                //show the name and score of leaderboard array
                 ForEach(leaderboard, id: \.self) { leader in
                     if ((leader["name"]) != nil) {
                     RoundedRectangle(cornerRadius: 10)
