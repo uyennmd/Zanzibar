@@ -27,10 +27,12 @@ struct EasyPlay: View {
     
     var body: some View {
         ZStack {
+          //Blackground
             myColor.pink
                 .opacity(0.4)
                 .ignoresSafeArea(.all)
             VStack {
+              //Show the row of player
                 ForEach($players) { player in
                     PlayerRow(player: player)
                 }
@@ -38,6 +40,7 @@ struct EasyPlay: View {
                     Spacer()
                     HStack{
                         Spacer()
+                      //show 3 dices
                         ForEach(0...roll.count-1, id: \.self) {dice in
                             Image("\(roll[dice])")
                                 .resizable()
@@ -45,6 +48,7 @@ struct EasyPlay: View {
                             Spacer()
                         }
                     }
+                  //button to roll dice
                     Button {
                         rollCount += 1
                         if (rollCount == 1) {
@@ -81,6 +85,7 @@ struct EasyPlay: View {
 
 
                     Spacer()
+                  //button to go to end your turn
                     Button {
                         players[play].highscore += players[play].score
                         if (play < players.count) {
@@ -106,6 +111,7 @@ struct EasyPlay: View {
                 
             }
             if (disableConfirm && disableRoll) {
+              //button to end the round(calculate chip and sort list of player in score and start new round. if after calculate chip, someone has reached 0, turn into end game
                 Button {
                     players = endEasyRound(players: players)
                     play = 0
@@ -127,6 +133,8 @@ struct EasyPlay: View {
                 }
             }
             if (endGame) {
+              //show when endgame is toggle
+              //End Game screen
                 ZStack {
                     myColor.blue
                         .ignoresSafeArea(.all)
@@ -135,6 +143,7 @@ struct EasyPlay: View {
                         WinView(winner: players[0])
                             .padding(10)
                         Spacer()
+                      //button to compare and store the winner into leaderboard and turn back to main menu
                         Button {
                             leader.name = players[0].name
                             leader.score = players[0].highscore
