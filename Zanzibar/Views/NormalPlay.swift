@@ -1,9 +1,14 @@
-//
-//  NormalPlay.swift
-//  Zanzibar (iOS)
-//
-//  Created by Uyen Nguyen Minh Duy on 25/08/2022.
-//
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2022B
+  Assessment: Assignment 2
+  Author: Nguyen Minh Duy Uyen
+  ID: s3819342
+  Created  date: 23/08/2022
+  Last modified: 29/08/2022
+  Acknowledgement: Acknowledge the resources that you use here. 
+*/
 
 import SwiftUI
 
@@ -25,7 +30,7 @@ struct NormalPlay: View {
             myColor.pink
                 .opacity(0.4)
                 .ignoresSafeArea(.all)
-            VStack {
+            VStack {//Show the row of player
                 ForEach($players) { player in
                     PlayerRow(player: player)
                 }
@@ -41,8 +46,8 @@ struct NormalPlay: View {
                                 Spacer()
                             }
                         }
-                        Button {
-                            playSound(sound: "spin", type: "mp3")
+                        Button {//button to roll dice
+                            playSound(sound: "spin", type: "mp3")   //play sound while rolling
                             rollCount += 1
                             if (rollCount == 1) {
                                 disableConfirm = false
@@ -78,8 +83,7 @@ struct NormalPlay: View {
 
 
                         Spacer()
-        //                Text(resetLeaderboard(lead:leader,player:players[0])[0].name)
-                        Button {
+                        Button {//button to go to end your turn
                             players[play].highscore += players[play].score
                             if (play < players.count) {
                                 disableRoll = false
@@ -102,6 +106,8 @@ struct NormalPlay: View {
                             .blur(radius: disableConfirm ? 30: 0)
                     }.blur(radius: (disableConfirm && disableRoll) ? 30: 0)
                     if (disableConfirm && disableRoll) {
+//button to end the round(calculate chip and sort list of player in score and start new round. if after calculate chip, someone has reached 0, turn into end game
+
                         Button {
                             players = endRound(players: players)
                             play = 0
@@ -125,7 +131,8 @@ struct NormalPlay: View {
                 }
             }
             
-            if (endGame) {
+            if (endGame) {//show when endgame is toggle
+              //End Game screen
                 ZStack {
                     myColor.blue
                         .ignoresSafeArea(.all)
