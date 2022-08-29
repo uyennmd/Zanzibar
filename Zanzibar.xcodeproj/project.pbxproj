@@ -8,8 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		F43CF62D28BC82EC00B187A3 /* WinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43CF62C28BC82EC00B187A3 /* WinView.swift */; };
+		F43CF63928BCF25A00B187A3 /* bet-chip.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F43CF63128BCF25A00B187A3 /* bet-chip.mp3 */; };
+		F43CF63A28BCF25A00B187A3 /* blink.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F43CF63228BCF25A00B187A3 /* blink.mp3 */; };
+		F43CF63B28BCF25A00B187A3 /* winning.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F43CF63328BCF25A00B187A3 /* winning.mp3 */; };
+		F43CF63C28BCF25A00B187A3 /* spin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F43CF63428BCF25A00B187A3 /* spin.mp3 */; };
+		F43CF63D28BCF25A00B187A3 /* gameover.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F43CF63528BCF25A00B187A3 /* gameover.mp3 */; };
+		F43CF63E28BCF25A00B187A3 /* drum-music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F43CF63628BCF25A00B187A3 /* drum-music.mp3 */; };
+		F43CF63F28BCF25A00B187A3 /* highscore.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F43CF63728BCF25A00B187A3 /* highscore.mp3 */; };
+		F43CF64028BCF25A00B187A3 /* ring-up.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F43CF63828BCF25A00B187A3 /* ring-up.mp3 */; };
+		F43CF64228BCF28900B187A3 /* PlaySound.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43CF64128BCF28900B187A3 /* PlaySound.swift */; };
+		F43CF64428BCF44400B187A3 /* HowToPlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43CF64328BCF44400B187A3 /* HowToPlay.swift */; };
 		F4AD594228BB7951000E4DB1 /* ZanzibarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AD594128BB7951000E4DB1 /* ZanzibarApp.swift */; };
-		F4AD594428BB7951000E4DB1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AD594328BB7951000E4DB1 /* ContentView.swift */; };
 		F4AD594628BB7952000E4DB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4AD594528BB7952000E4DB1 /* Assets.xcassets */; };
 		F4AD594928BB7952000E4DB1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4AD594828BB7952000E4DB1 /* Preview Assets.xcassets */; };
 		F4AD595128BB798A000E4DB1 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AD595028BB798A000E4DB1 /* SettingView.swift */; };
@@ -29,9 +38,19 @@
 
 /* Begin PBXFileReference section */
 		F43CF62C28BC82EC00B187A3 /* WinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinView.swift; sourceTree = "<group>"; };
+		F43CF63128BCF25A00B187A3 /* bet-chip.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "bet-chip.mp3"; sourceTree = "<group>"; };
+		F43CF63228BCF25A00B187A3 /* blink.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = blink.mp3; sourceTree = "<group>"; };
+		F43CF63328BCF25A00B187A3 /* winning.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = winning.mp3; sourceTree = "<group>"; };
+		F43CF63428BCF25A00B187A3 /* spin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = spin.mp3; sourceTree = "<group>"; };
+		F43CF63528BCF25A00B187A3 /* gameover.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gameover.mp3; sourceTree = "<group>"; };
+		F43CF63628BCF25A00B187A3 /* drum-music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "drum-music.mp3"; sourceTree = "<group>"; };
+		F43CF63728BCF25A00B187A3 /* highscore.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = highscore.mp3; sourceTree = "<group>"; };
+		F43CF63828BCF25A00B187A3 /* ring-up.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ring-up.mp3"; sourceTree = "<group>"; };
+		F43CF64128BCF28900B187A3 /* PlaySound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySound.swift; sourceTree = "<group>"; };
+		F43CF64328BCF44400B187A3 /* HowToPlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToPlay.swift; sourceTree = "<group>"; };
+		F43CF64528BCF8E300B187A3 /* Zanzibar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Zanzibar.entitlements; sourceTree = "<group>"; };
 		F4AD593E28BB7951000E4DB1 /* Zanzibar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zanzibar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4AD594128BB7951000E4DB1 /* ZanzibarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZanzibarApp.swift; sourceTree = "<group>"; };
-		F4AD594328BB7951000E4DB1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F4AD594528BB7952000E4DB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4AD594828BB7952000E4DB1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F4AD595028BB798A000E4DB1 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
@@ -60,6 +79,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F43CF63028BCF25A00B187A3 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				F43CF63128BCF25A00B187A3 /* bet-chip.mp3 */,
+				F43CF63228BCF25A00B187A3 /* blink.mp3 */,
+				F43CF63328BCF25A00B187A3 /* winning.mp3 */,
+				F43CF63428BCF25A00B187A3 /* spin.mp3 */,
+				F43CF63528BCF25A00B187A3 /* gameover.mp3 */,
+				F43CF63628BCF25A00B187A3 /* drum-music.mp3 */,
+				F43CF63728BCF25A00B187A3 /* highscore.mp3 */,
+				F43CF63828BCF25A00B187A3 /* ring-up.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		F4AD593528BB7951000E4DB1 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +113,8 @@
 		F4AD594028BB7951000E4DB1 /* Zanzibar */ = {
 			isa = PBXGroup;
 			children = (
+				F43CF64528BCF8E300B187A3 /* Zanzibar.entitlements */,
+				F43CF63028BCF25A00B187A3 /* Sounds */,
 				F4AD596428BB7A48000E4DB1 /* Model */,
 				F4AD594F28BB7963000E4DB1 /* Views */,
 				F4AD594128BB7951000E4DB1 /* ZanzibarApp.swift */,
@@ -99,7 +135,6 @@
 		F4AD594F28BB7963000E4DB1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F4AD594328BB7951000E4DB1 /* ContentView.swift */,
 				F4AD595028BB798A000E4DB1 /* SettingView.swift */,
 				F4AD595228BB7995000E4DB1 /* MenuView.swift */,
 				F4AD595428BB799E000E4DB1 /* ButtonView.swift */,
@@ -111,6 +146,7 @@
 				F4AD596028BB79D9000E4DB1 /* HardPlay.swift */,
 				F4AD596228BB79E9000E4DB1 /* PlayerRow.swift */,
 				F43CF62C28BC82EC00B187A3 /* WinView.swift */,
+				F43CF64328BCF44400B187A3 /* HowToPlay.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -118,6 +154,7 @@
 		F4AD596428BB7A48000E4DB1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F43CF64128BCF28900B187A3 /* PlaySound.swift */,
 				F4AD596528BB7A5B000E4DB1 /* GamePlay.swift */,
 				F4AD596728BB7A68000E4DB1 /* Player.swift */,
 				F4AD596928BB7A71000E4DB1 /* myColor.swift */,
@@ -183,8 +220,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F43CF63F28BCF25A00B187A3 /* highscore.mp3 in Resources */,
+				F43CF64028BCF25A00B187A3 /* ring-up.mp3 in Resources */,
+				F43CF63D28BCF25A00B187A3 /* gameover.mp3 in Resources */,
 				F4AD594928BB7952000E4DB1 /* Preview Assets.xcassets in Resources */,
+				F43CF63E28BCF25A00B187A3 /* drum-music.mp3 in Resources */,
+				F43CF63928BCF25A00B187A3 /* bet-chip.mp3 in Resources */,
+				F43CF63C28BCF25A00B187A3 /* spin.mp3 in Resources */,
 				F4AD594628BB7952000E4DB1 /* Assets.xcassets in Resources */,
+				F43CF63A28BCF25A00B187A3 /* blink.mp3 in Resources */,
+				F43CF63B28BCF25A00B187A3 /* winning.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,15 +247,16 @@
 				F4AD596628BB7A5B000E4DB1 /* GamePlay.swift in Sources */,
 				F4AD596828BB7A68000E4DB1 /* Player.swift in Sources */,
 				F4AD595928BB79B2000E4DB1 /* SelectMenu.swift in Sources */,
+				F43CF64428BCF44400B187A3 /* HowToPlay.swift in Sources */,
 				F4AD596A28BB7A71000E4DB1 /* myColor.swift in Sources */,
 				F4AD595528BB799E000E4DB1 /* ButtonView.swift in Sources */,
 				F4AD595D28BB79CA000E4DB1 /* EasyPlay.swift in Sources */,
 				F4AD595B28BB79BD000E4DB1 /* LevelView.swift in Sources */,
-				F4AD594428BB7951000E4DB1 /* ContentView.swift in Sources */,
 				F4AD595F28BB79D2000E4DB1 /* NormalPlay.swift in Sources */,
 				F4AD596128BB79D9000E4DB1 /* HardPlay.swift in Sources */,
 				F4AD594228BB7951000E4DB1 /* ZanzibarApp.swift in Sources */,
 				F4AD596328BB79E9000E4DB1 /* PlayerRow.swift in Sources */,
+				F43CF64228BCF28900B187A3 /* PlaySound.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +382,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Zanzibar/Zanzibar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Zanzibar/Preview Content\"";
@@ -354,6 +401,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = vn.edu.rmit.alice.Zanzibar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -365,6 +413,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Zanzibar/Zanzibar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Zanzibar/Preview Content\"";
@@ -383,6 +432,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = vn.edu.rmit.alice.Zanzibar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

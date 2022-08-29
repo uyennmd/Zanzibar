@@ -10,12 +10,12 @@ import SwiftUI
 struct LevelView: View {
     @ObservedObject var setting: Setting
     @State var players = [Player]()
-
+    
     var body: some View {
         if (setting.level == "easy") {
             EasyPlay(players: createPlayers(numPlayer: setting.player, numChip: setting.chip))
         } else if (setting.level == "normal") {
-            NormalPlay(players: createPlayers(numPlayer: setting.player, numChip: 1))
+            NormalPlay(players: createPlayers(numPlayer: setting.player, numChip: setting.chip))
         } else if (setting.level == "hard") {
             HardPlay(players: createPlayers(numPlayer: setting.player, numChip: setting.chip))
         }

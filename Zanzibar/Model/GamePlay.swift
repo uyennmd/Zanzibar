@@ -25,21 +25,21 @@ func RollDice(player: Player) -> [Int] {
 func simpleScore(player: Player, dice: [Int]) {
     var score = 0
     if (dice.contains(4) && dice.contains(5) && dice.contains(6)) {
-        score = 1000
+        score = 14
     } else if (dice[0] == 1 && dice[1] == 1 && dice[2] == 1) {
-        score = 900
+        score = 13
     } else if (dice[0] == 2 && dice[1] == 2 && dice[2] == 2) {
-        score = 800
+        score = 12
     } else if (dice[0] == 3 && dice[1] == 3 && dice[2] == 3) {
-        score = 700
+        score = 11
     } else if (dice[0] == 4 && dice[1] == 4 && dice[2] == 4) {
-        score = 600
+        score = 10
     } else if (dice[0] == 5 && dice[1] == 5 && dice[2] == 5) {
-        score = 500
+        score = 9
     } else if (dice[0] == 6 && dice[1] == 6 && dice[2] == 6) {
-        score = 400
+        score = 8
     } else if (dice.contains(1) && dice.contains(2) && dice.contains(3)) {
-        score = 300
+        score = 7
     } else {
         for num in dice {
             switch num {
@@ -137,17 +137,20 @@ func calcChipHard(players: [Player]){
         for i in 0...length {
             if (players[i].score == 1000) {
                 chip += 4
+                players[i].chip -= 4
             } else if (players[i].score == 900 && players[i].score == 800 && players[i].score == 700 && players[i].score == 600 && players[i].score == 500 && players[i].score == 400) {
-                
-                chip = 3
+                players[i].chip -= 3
+                chip += 3
             } else if (players[i].score == 300) {
-                chip = 2
+                chip += 2
+                players[i].chip -= 2
             } else {
-                chip = 1
+                chip += 1
+                players[i].chip -= 1
             }
-            players[i].chip -= chip
+            
             if (i == length) {
-                players[i].chip += (chip * 3)
+                players[i].chip += chip
             }
             
         }
@@ -189,15 +192,22 @@ func calcChip(players: [Player]){
 
 
 
-func resetLeaderboard(lead: [String:Int], player: Leader) -> [String:Int] {
-    var count = 0
+func resetLeaderboard(lead: [[String:String]], player: Leader) -> [[String:String]] {
+    
     var sortLead = lead
-    sortLead[player.name] = player.score
-    for (name, _) in sortLead.sorted(by: {$0.value > $1.value}) {
-        count += 1
-        if (count == 11) {
-            sortLead[name] = nil
+    if (player.score != 0) {
+        sortLead.append(["name" : player.name, "score" : String(player.score)])
+        sortLead = sortLead.sorted{
+            guard let s1 = $0["score"], let s2 = $1["score"] else {
+              return false
+            }
+            return s1 > s2
+          }
+        if (lead.count == 11) {
+            sortLead.remove(at: 10)
         }
     }
     return sortLead
 }
+
+

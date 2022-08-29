@@ -22,6 +22,9 @@ struct SettingView: View {
             myColor.pink
                 .opacity(0.4)
                 .ignoresSafeArea(.all)
+                .onAppear(perform: {
+                    playSound(sound: "bet-chip", type: "mp3")
+                })
             VStack {
                 Spacer()
                 HStack{

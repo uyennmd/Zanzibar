@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Leaderboard: View {
-    @State var leaderboard : [String:Int]
+    @State var leaderboard : [[String:String]]
     var body: some View {
         ZStack {
             myColor.blue
@@ -18,20 +18,21 @@ struct Leaderboard: View {
                     .foregroundColor(Color.red)
                     .font(.system(size: 50))
                     .fontWeight(.bold)
-                Spacer()
-                ForEach(leaderboard.sorted(by: {$0.value > $1.value}), id: \.key) { key, value in
+                ForEach(leaderboard, id: \.self) { leader in
+                    if ((leader["name"]) != nil) {
                     RoundedRectangle(cornerRadius: 10)
                         .fill(myColor.pink)
                         .frame(width: 300, height: 50.0)
                         .overlay(
                             HStack {
-                                Section(header: Text(key)) {
-                                    Spacer()
-                                    Text("\(value)")
-                                }
+                                Text(leader["name"]!)
+                                Spacer()
+                                Text(leader["score"]!)
                             }.padding(10)
                         )
+                    }
                 }
+                Spacer()
             }
         }
     }
@@ -39,6 +40,6 @@ struct Leaderboard: View {
 //
 struct Leaderboard_Previews: PreviewProvider {
     static var previews: some View {
-        Leaderboard(leaderboard: ["Player" : 10])
+        Leaderboard(leaderboard: [["name" : "Player", "score": "10"]])
     }
 }
