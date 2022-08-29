@@ -1,18 +1,25 @@
-//
-//  GamePlay.swift
-//  Zanzibar (iOS)
-//
-//  Created by Uyen Nguyen Minh Duy on 23/08/2022.
-//
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2022B
+  Assessment: Assignment 2
+  Author: Nguyen Minh Duy Uyen
+  ID: s3819342
+  Created  date: 23/08/2022
+  Last modified: 29/08/2022
+  Acknowledgement: Acknowledge the resources that you use here. 
+*/
 
 import Foundation
 import UIKit
 
+//Function for random the number of dice face
 func RandomDice ()-> Int {
     let number = [1, 2, 3, 4, 5, 6]
     return number.randomElement()!
 }
 
+//Function to create an array of 3 dice in a roll
 func RollDice(player: Player) -> [Int] {
     //get the player rolls dice
     var dice = [Int]()
@@ -22,6 +29,8 @@ func RollDice(player: Player) -> [Int] {
     return dice
 }
 
+
+//Function to calculate score in easy mode 
 func simpleScore(player: Player, dice: [Int]) {
     var score = 0
     if (dice.contains(4) && dice.contains(5) && dice.contains(6)) {
@@ -63,6 +72,7 @@ func simpleScore(player: Player, dice: [Int]) {
     player.score = score
 }
 
+//Function to calculate score in normal and hard mode
 func Score(player: Player, dice: [Int]) {
     var score = 0
     if (dice.contains(4) && dice.contains(5) && dice.contains(6)) {
@@ -104,14 +114,23 @@ func Score(player: Player, dice: [Int]) {
     player.score = score
 }
 
-func endRound (players: [Player]) -> [Player] {
+//function to sort the array of all players in descending order of score 
+func endNormalRound (players: [Player]) -> [Player] {
     let sortPlayers = players.sorted {
         $0.score > $1.score
     }
-    calcChip(players: sortPlayers)
+    calcChipNormal(players: sortPlayers)
     return sortPlayers
 }
-
+//function to sort the array of all players in descending order of score 
+func endEasyRound (players: [Player]) -> [Player] {
+    let sortPlayers = players.sorted {
+        $0.score > $1.score
+    }
+    calcChipEasy(players: sortPlayers)
+    return sortPlayers
+}
+//function to sort the array of all players in descending order of score 
 func endHardRound (players: [Player]) -> [Player] {
     let sortPlayers = players.sorted {
         $0.score > $1.score
@@ -120,6 +139,7 @@ func endHardRound (players: [Player]) -> [Player] {
     return sortPlayers
 }
 
+//function to  calculate chip in hard mode
 func calcChipHard(players: [Player]){
     var chip = 0
     let length = players.count - 1
@@ -157,7 +177,8 @@ func calcChipHard(players: [Player]){
     }
 }
 
-func calcChip(players: [Player]){
+//function to calculate chip in normal mode
+func calcChipNormal(players: [Player]){
     var minusChip = 0
     let length = players.count - 1
     let score = players[0].score
@@ -188,10 +209,40 @@ func calcChip(players: [Player]){
         
     }
 }
+//function to calculate chip in easy mode
+func calcChipEasy(players: [Player]){
+    var minusChip = 0
+    let length = players.count - 1
+    let score = players[0].score
+    var i = 0
+    for player in players {
+        if (player.score != score) {
+            break
+        }
+        i += 1
+    }
+    if (i == length + 1) {
+        
+    } else if (players[0].score == 14) {
+        minusChip = 4
+    } else if (players[0].score == 13 && players[0].score == 12 && players[0].score == 11 && players[0].score == 10 && players[0].score == 9 && players[0].score == 8) {
+        
+        minusChip = 3
+    } else if (players[0].score == 7) {
+        minusChip = 2
+    } else {
+        minusChip = 1
+    }
+    for i in 0...length {
+        players[i].chip -= minusChip
+        if (i == length) {
+            players[i].chip += (minusChip * 3)
+        }
+        
+    }
+}
 
-
-
-
+//function to reset the leaderboard
 func resetLeaderboard(lead: [[String:String]], player: Leader) -> [[String:String]] {
     
     var sortLead = lead
