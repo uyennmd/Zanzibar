@@ -1,9 +1,14 @@
-//
-//  SettingView.swift
-//  Zanzibar
-//
-//  Created by Uyen Nguyen Minh Duy on 23/08/2022.
-//
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2022B
+  Assessment: Assignment 2
+  Author: Nguyen Minh Duy Uyen
+  ID: s3819342
+  Created  date: 23/08/2022
+  Last modified: 29/08/2022
+  Acknowledgement: Acknowledge the resources that you use here. 
+*/
 
 import SwiftUI
 
@@ -16,20 +21,21 @@ struct SettingView: View {
     @State private var hard = true
     @State private var easy = true
     let numPlayer = [2, 3, 4, 5, 6]
-    let numChip = [20, 40]
+    let numChip = [1, 2, 3, 4, 5, 10, 20]
     var body: some View {
         ZStack {
             myColor.pink
                 .opacity(0.4)
                 .ignoresSafeArea(.all)
                 .onAppear(perform: {
-                    playSound(sound: "bet-chip", type: "mp3")
+                    playSound(sound: "bet-chip", type: "mp3") //play sound when view appear
                 })
             VStack {
                 Spacer()
                 HStack{
                     Text("Number of Player:")
                     VStack {
+                        //create a menu pf number of player for user to choose
                         Picker("Select number of player:", selection: $setting.player) {
                             ForEach(numPlayer, id: \.self) {
                                 Text("\($0)")
@@ -40,6 +46,7 @@ struct SettingView: View {
                     }
                 }
                 Text("Level:")
+                //create a selective button to choose which level of game. when a level is chosen, another one will be unselected
                 if (setting.level == "easy") {
                     HStack {
                         SelectMenu(isSelected: $easy, text: "Easy")
@@ -164,7 +171,7 @@ struct SettingView: View {
                 }
                 HStack{
                     Text("Number of Chip:")
-                    VStack {
+                    VStack {//create a menu pf number of chip for user to choose
                         Picker("Select number of chip:", selection: $setting.chip) {
                             ForEach(numChip, id: \.self) {
                                 Text("\($0)")
