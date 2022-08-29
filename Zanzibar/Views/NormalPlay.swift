@@ -9,13 +9,13 @@ import SwiftUI
 
 struct NormalPlay: View {
     @State var players: [Player]
-//    @State var leader = UserDefaults.standard.object(forKey: "Leaderboard") as! [Player]
+    @EnvironmentObject var leader : Leader
     @State var roll = Array(repeating: 1, count: 3)
     @State var play = 0
     @State var rollCount = 0
     @State var disableRoll = false
     @State var disableConfirm = true
-    @State var changeView = true
+    @State var changeView = false
     
     var body: some View {
         ZStack {
@@ -55,6 +55,7 @@ struct NormalPlay: View {
                             disableRoll = true
                             rollCount = 0
                             if (play == (players.count - 1)) {
+                                players[play].highscore += players[play].score
                                 disableConfirm = true
                             }
                         }
@@ -74,6 +75,7 @@ struct NormalPlay: View {
                     Spacer()
     //                Text(resetLeaderboard(lead:leader,player:players[0])[0].name)
                     Button {
+                        players[play].highscore += players[play].score
                         if (play < players.count) {
                             disableRoll = false
                             play += 1
@@ -127,7 +129,8 @@ struct NormalPlay: View {
                             .padding(10)
                         Spacer()
                         Button {
-                            
+                            leader.name = players[0].name
+                            leader.score = players[0].highscore
                         } label: {
                             Capsule()
                                 .fill(myColor.pink)

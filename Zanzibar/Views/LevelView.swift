@@ -15,7 +15,7 @@ struct LevelView: View {
         if (setting.level == "easy") {
             EasyPlay(players: createPlayers(numPlayer: setting.player, numChip: setting.chip))
         } else if (setting.level == "normal") {
-            NormalPlay(players: createPlayers(numPlayer: setting.player, numChip: setting.chip))
+            NormalPlay(players: createPlayers(numPlayer: setting.player, numChip: 1))
         } else if (setting.level == "hard") {
             HardPlay(players: createPlayers(numPlayer: setting.player, numChip: setting.chip))
         }

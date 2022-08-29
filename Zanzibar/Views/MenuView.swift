@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MenuView: View {
     @StateObject var setting = Setting()
+    @State var leaderboard : [String:Int] = UserDefaults.standard.object(forKey: "Leader") as? [String:Int] ?? [ : ]
     @StateObject var leader = Leader()
     @State private var showingMyHighScore = false
     @State var active = false
@@ -39,6 +40,10 @@ struct MenuView: View {
                                 .foregroundColor(.blue.opacity(0.7)))
                     }
                     Button {
+                        leaderboard = resetLeaderboard(lead: leaderboard, player: leader)
+//                        leaderboard[leader.name] = leader.score
+//                        UserDefaults.standard.removeObject(forKey: "Leader")
+                        UserDefaults.standard.set(leaderboard, forKey: "Leader")
                         showingMyHighScore.toggle()
                     } label: {
                         ButtonView()
@@ -48,11 +53,11 @@ struct MenuView: View {
                                 .foregroundColor(.blue.opacity(0.7)))
                             
                     }.sheet(isPresented: $showingMyHighScore) {
-                        Leaderboard()
+                        Leaderboard(leaderboard: leaderboard)
                     }
                     Spacer()
-                    
-                    
+                    Text(leader.name)
+                    Text("\(leader.score)")
                 }
                 
             }

@@ -26,7 +26,14 @@ struct WinView: View {
                         .bold()
                         .font(Font.system(size: 55))
                     Spacer()
-                    
+                    Text("With Highest Score")
+                        .foregroundColor(Color.purple.opacity(0.8))
+                        .bold()
+                        .font(Font.system(size: 30))
+                    Text("\(winner.highscore)")
+                        .foregroundColor(Color.blue.opacity(0.8))
+                        .font(Font.system(size: 35))
+                    Spacer()
                 }
             )
     }

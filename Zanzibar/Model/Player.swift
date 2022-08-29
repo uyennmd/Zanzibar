@@ -49,5 +49,6 @@ func createPlayers(numPlayer: Int, numChip: Int) -> [Player] {
 }
 
 class Leader: ObservableObject {
-    @Published var leader = [Player]()
+    @Published var name = "Player"
+    @Published var score = 0
 }
