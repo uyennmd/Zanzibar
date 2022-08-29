@@ -1,15 +1,21 @@
-//
-//  WinView.swift
-//  Zanzibar
-//
-//  Created by Uyen Nguyen Minh Duy on 29/08/2022.
-//
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2022B
+  Assessment: Assignment 2
+  Author: Nguyen Minh Duy Uyen
+  ID: s3819342
+  Created  date: 23/08/2022
+  Last modified: 29/08/2022
+  Acknowledgement: Acknowledge the resources that you use here. 
+*/
 
 import SwiftUI
 
 struct WinView: View {
     @State var winner: Player
     var body: some View {
+        //A view show when a player reach 0 chip
         RoundedRectangle(cornerRadius: 50)
             .fill(myColor.pink.opacity(0.8))
             .scaledToFit()
